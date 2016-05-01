@@ -26,7 +26,9 @@ public class ConverterUI extends JFrame{
 	private JMenuItem menuItem;
 	private JPanel topPanel;
 	private JPanel bottomPanel;
-	
+	/**
+	 * Create the application.
+	 */
 	public ConverterUI(UnitConverter uc){
 		this.unitConverter = uc;
 		this.setTitle("Distance Converter");
