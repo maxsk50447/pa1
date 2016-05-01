@@ -1,20 +1,34 @@
 package unitconverter;
-
+/**
+ * Singleton Class Everything is contains by this class
+ * It contains UnitType unit of each UnitType and unit of each type is contains value and name
+ * 
+ * @author Patipol Wangjaitham
+ *
+ */
 public class UnitFactory {
-	private static UnitFactory instance = null;
-	private static UnitFactory unitTypes = null;
-	private static UnitFactory units = null;
+	private static UnitFactory INSTANCE = null;
+	/**
+	 * Constructor of UnitFactory
+	 */
 	private UnitFactory(){}
 	public static UnitFactory getInstance(){
-		if(instance == null){ instance = new UnitFactory(); }
-		return instance;
+		if(INSTANCE == null) INSTANCE = new UnitFactory();
+		return INSTANCE;
 	}
-	public static UnitFactory getUnitTypes() {
-		if(unitTypes == null){ unitTypes = new UnitFactory();}
-		return unitTypes;
+	/**
+	 * 
+	 * @return all of unitType that this program have
+	 */
+	public UnitType[] getUnitTypes(){
+			return UnitType.values();
 	}
-	public static UnitFactory getUnits() {
-		if(units == null){units = new UnitFactory();}
-		return units;
+	/**
+	 * 
+	 * @param unitType is type that you receive from JMenuItem
+	 * @return unit of unitType that you receive
+	 */
+	public Unit[] getUnits(UnitType unitType){
+		return unitType.getUnit();
 	}
 }
